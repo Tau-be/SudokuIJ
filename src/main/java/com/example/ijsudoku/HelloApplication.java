@@ -1,13 +1,16 @@
 package com.example.ijsudoku;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class HelloApplication extends Application {
+
     private static final int N = 9;
     private static char[][] sud_problem;
     @Override
@@ -23,7 +26,7 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
 
         // hier wird die UI gelaunched
-        launch();
+
 
             // hier wird das Board erstellt.
 
@@ -38,6 +41,8 @@ public class HelloApplication extends Application {
                     {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
                     {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
             };
+
+        launch();
 
             // Funktion zur Ausführung des Solver's.
             System.out.println(backTrack(sud_problem, 0, 0));
@@ -115,5 +120,25 @@ public class HelloApplication extends Application {
             board[row][col] = '.';
 
             return false;
+        }
+
+        public static char[][] RandomizeButton() {
+            System.out.println("Randomize!");
+            // hier muss das Board randomized werden
+
+            // hier muss das Board in die UI geladen werden
+
+            return sud_problem;
+        }
+        public static void DoSolve() {
+            System.out.println("Solve!");
+            System.out.println(backTrack(sud_problem, 0, 0));
+
+            for (char[] solution : sud_problem) {
+                for (char c : solution) {
+                    System.out.print(c + " ");
+                }
+                System.out.println();
+            }
         }
     }
