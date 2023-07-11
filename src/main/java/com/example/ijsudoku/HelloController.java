@@ -4,10 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import java.util.*;
 
 public class HelloController {
 
     private static char[][] sud_problem;
+    private Label zahl;
+
     @FXML
     private GridPane SudokuGridPane;
 
@@ -53,7 +56,11 @@ public class HelloController {
 
     @FXML
     protected void onGridClick() {
-        System.out.println("Grid!");
+
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        zahl.setText(String.valueOf(number));
+        System.out.println(String.valueOf(number));
     }
 }
 
