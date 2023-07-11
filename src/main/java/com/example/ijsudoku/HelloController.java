@@ -35,17 +35,17 @@ public class HelloController {
     @FXML
     protected void onRandomizeButtonClick() {
         System.out.println("Randomize!");
-        sud_problem = HelloApplication.RandomizeButton();
+        HelloApplication.RandomizeButton();
 
         // method to fill SudokuGridPane with sud_problem
-        for (int i = 0; i < sud_problem.length; i++) {
-            for (int j = 0; j < sud_problem[i].length; j++) {
-                System.out.println(sud_problem[i][j]);
-                Label label = new Label();
-                label.setText(String.valueOf(sud_problem[i][j]));
-                SudokuGridPane.add(label, j, i);
-            }
-        }
+        //for (int i = 0; i < sud_problem.length; i++) {
+        //   for (int j = 0; j < sud_problem[i].length; j++) {
+        //        System.out.println(sud_problem[i][j]);
+        //       Label label = new Label();
+        //      label.setText(String.valueOf(sud_problem[i][j]));
+        //        SudokuGridPane.add(label, j, i);
+        //}
+        //}
     }
 
     @FXML
