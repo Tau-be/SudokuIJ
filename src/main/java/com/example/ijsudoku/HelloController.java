@@ -12,40 +12,30 @@ public class HelloController {
     private Label zahl;
 
     @FXML
+    private Label TerminalLabel;
+    @FXML
     private GridPane SudokuGridPane;
 
     @FXML
     private CheckBox UserInputCheckBox;
 
     @FXML
-    protected void onHelloButtonClick() {
-        System.out.println("Hello!");
-    }
-
-    @FXML
     protected void onSolveButtonClick() {
-        HelloApplication.DoSolve();
+        TerminalLabel.setText(HelloApplication.DoSolve());
     }
 
     @FXML
     protected void onClearButtonClick() {
         System.out.println("Clear!");
+        TerminalLabel.setText("The Peak of UI is BACK!");
     }
 
     @FXML
     protected void onRandomizeButtonClick() {
         System.out.println("Randomize!");
-        HelloApplication.RandomizeButton();
+        TerminalLabel.setText(HelloApplication.RandomizeButton());
 
-        // method to fill SudokuGridPane with sud_problem
-        //for (int i = 0; i < sud_problem.length; i++) {
-        //   for (int j = 0; j < sud_problem[i].length; j++) {
-        //        System.out.println(sud_problem[i][j]);
-        //       Label label = new Label();
-        //      label.setText(String.valueOf(sud_problem[i][j]));
-        //        SudokuGridPane.add(label, j, i);
-        //}
-        //}
+        // Hinzufuegbar sind noch Lineien damit die "Boxen" jeweils 3x3 sind und somit lesbarer werden
     }
 
     @FXML

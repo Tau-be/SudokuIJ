@@ -26,14 +26,14 @@ public class HelloApplication extends Application {
 
 
 
-    public static void DoSolve() {
+    public static String DoSolve() {
 
         // Löst das Sudoku
         solveSudoku(sud_problem);
 
         // Gibt das gelöste Sudoku aus
         printSolution();
-        System.out.println("Das Sudoku wurde gelöst");
+        return printUI();
     }
 
     public static void fillRandomNumbers(char[][] board) {
@@ -142,15 +142,16 @@ public class HelloApplication extends Application {
         backTrack(board, 0, 0);
     }
 
-    public static void RandomizeButton() {
+    public static String RandomizeButton() {
 
         // Generiert ein zufälliges Sudoku
         generateRandomSudoku();
         // Gibt das zufällig erstellte und ungelöste Sudoku aus
-        printSolution();
         System.out.println("Ein zufälliges Sudoku wurde generiert");
 
         System.out.println();
+
+        return printUI();
 
     }
 
@@ -180,5 +181,15 @@ public class HelloApplication extends Application {
             }
             System.out.println();
         }
+    }
+    public static String printUI() {
+        String sZeile = "";
+        for (char[] solution : sud_problem) {
+            for (char c : solution) {
+                sZeile += c + " ";
+            }
+            sZeile += "\n";
+        }
+        return sZeile;
     }
 }
